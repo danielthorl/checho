@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function Hero() {
   const badgeStyle = { backgroundColor: "#A8C5B5", color: "white", padding: "6px 16px", borderRadius: "9999px", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.1em" };
   const btnPrimary = { backgroundColor: "#D4866A", color: "white", padding: "14px 32px", borderRadius: "9999px", textDecoration: "none", fontSize: "1rem", fontWeight: 600 };
@@ -11,6 +15,53 @@ export default function Hero() {
     "Terapia individual y de pareja",
     "Tarjeta profesional RETHUS",
   ];
+
+  useEffect(() => {
+    const box = document.getElementById("heroAnim");
+    if (!box) return;
+    let isHeart = true;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const burst = () => {
+      for (let i = 0; i < 12; i++) {
+        const d = document.createElement("div");
+        const size = 3 + Math.random() * 5;
+        d.style.cssText = `
+          position:absolute;
+          width:${size}px;height:${size}px;
+          border-radius:50%;
+          background:rgba(255,255,255,0.7);
+          left:${8 + Math.random() * 84}%;
+          top:${8 + Math.random() * 84}%;
+          pointer-events:none;
+          opacity:0;
+          transition:all 0.8s ease-out;
+        `;
+        box.appendChild(d);
+        setTimeout(() => {
+          const tx = (Math.random() - 0.5) * 60;
+          const ty = (Math.random() - 0.5) * 60;
+          d.style.opacity = "0.9";
+          d.style.transform = `scale(1.3) translate(${tx}px,${ty}px)`;
+          setTimeout(() => {
+            d.style.opacity = "0";
+            setTimeout(() => d.remove(), 800);
+          }, 400);
+        }, i * 35 + 10);
+      }
+    };
+
+    const toggle = () => {
+      isHeart = !isHeart;
+      box.classList.remove("show-heart", "show-brain");
+      box.classList.add(isHeart ? "show-heart" : "show-brain");
+      burst();
+      timer = setTimeout(toggle, 4000);
+    };
+
+    timer = setTimeout(toggle, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="inicio" style={{ backgroundColor: "#F5F0E8", minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "80px" }}>
@@ -54,21 +105,31 @@ export default function Hero() {
         {/* Tarjeta derecha */}
         <div style={{ flex: "0 0 340px", minWidth: "280px" }}>
           <div style={{ backgroundColor: "white", borderRadius: "24px", padding: "2rem", boxShadow: "0 8px 40px rgba(123,167,160,0.15)" }}>
-            <div style={{ backgroundColor: "#7BA7A0", borderRadius: "16px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem" }}>
-              <p style={{ color: "white", fontSize: "4rem" }}>🧠</p>
+
+            {/* Área animación */}
+            <div
+              id="heroAnim"
+              className="show-heart"
+              style={{ backgroundColor: "#7BA7A0", borderRadius: "16px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem", position: "relative", overflow: "hidden" }}
+            >
+              <div className="anim-icon icon-heart">
+                <i className="fa-solid fa-heart" style={{ fontSize: "5.5rem", color: "white", filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.2))" }}></i>
+              </div>
+              <div className="anim-icon icon-brain">
+                <i className="fa-solid fa-brain" style={{ fontSize: "5.5rem", color: "white", filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.2))" }}></i>
+              </div>
             </div>
-            <h3 style={{ color: "#2C2C2C", fontSize: "1.1rem", fontWeight: 700, margin: "0 0 0.5rem 0" }}>Sergio Steven Díaz Pulido</h3>
-            <p style={{ color: "#6B6B6B", fontSize: "0.9rem", margin: "0 0 1rem 0" }}>Psicólogo — TCC · Medellín, Colombia</p>
+
+            {/* Checks */}
             <div style={{ display: "flex", flexDirection: "column" as const, gap: "0.75rem" }}>
-              {checks.map((text) => {
-                return (
-                  <div key={text} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                    <span style={checkStyle}>✓</span>
-                    <span style={{ color: "#2C2C2C", fontSize: "0.9rem" }}>{text}</span>
-                  </div>
-                );
-              })}
+              {checks.map((text) => (
+                <div key={text} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <span style={checkStyle}>✓</span>
+                  <span style={{ color: "#2C2C2C", fontSize: "0.9rem" }}>{text}</span>
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
 
