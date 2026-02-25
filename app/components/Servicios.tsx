@@ -40,7 +40,7 @@ export default function Servicios() {
     {
       icon: "👶",
       titulo: "Atención Infantil y Adolescentes",
-      desc: "Evaluación e intervención psicológica especializada para niños y adolescentes en contextos educativos, familiares y clínicos.",
+      desc: "Evaluación e intervención psicológica para niños y adolescentes en contextos educativos, familiares y clínicos.",
       tags: ["Niños", "Adolescentes", "Educativo"],
       color: "#D4866A",
     },

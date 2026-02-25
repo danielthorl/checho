@@ -18,7 +18,7 @@ export default function Hero() {
 
         {/* Texto izquierda */}
         <div style={{ flex: 1, minWidth: "300px" }}>
-          <span style={badgeStyle}>Psicólogo · Enfoque Cognitivo-Conductual</span>
+          <span style={badgeStyle}>Psicólogo • enfoque desde el modelo cognitivo conductual</span>
 
           <h1 style={{ color: "#2C2C2C", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, lineHeight: 1.2, marginTop: "1.5rem", marginBottom: "1rem" }}>
             Tu bienestar <br />
@@ -27,7 +27,7 @@ export default function Hero() {
           </h1>
 
           <p style={{ color: "#6B6B6B", fontSize: "1.1rem", lineHeight: 1.8, marginBottom: "2rem", maxWidth: "480px" }}>
-            Soy Sergio Steven Díaz, psicólogo especializado en Terapia Cognitivo-Conductual. Te acompaño en el proceso de entender tus emociones, superar obstáculos y construir una vida más plena.
+            Soy Sergio Steven Díaz, psicólogo con formación en terapia cognitivo conductual. Te acompaño en el proceso de entender tus emociones, superar obstáculos y construir una vida más plena.
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" as const }}>

@@ -30,7 +30,7 @@ export default function TemasInteres() {
       emoji: "💭",
       categoria: "TCC",
       titulo: "¿Qué es la reestructuración cognitiva?",
-      desc: "Uno de los pilares de la Terapia Cognitivo-Conductual. Aprende cómo identificar y transformar los pensamientos que te generan malestar emocional.",
+      desc: "Una técnica de la Terapia Cognitivo-Conductual. Aprende cómo identificar y transformar los pensamientos que te generan malestar emocional.",
       color: "#7BA7A0",
       minLectura: "7 min",
     },
