@@ -23,7 +23,7 @@ export default function Contacto() {
 
   const infoItems = [
     { icon: <FaWhatsapp size={20} color="#25D366" />, titulo: "WhatsApp", valor: "+57 305 337 2724", link: "https://wa.me/573053372724" },
-    { icon: <SiGmail size={20} color="#EA4335" />, titulo: "Gmail", valor: "sergiostevendiazpulido01@gmail.com", link: "mailto:sergiostevendiazpulido01@gmail.com" },
+    { icon: <SiGmail size={20} color="#EA4335" />, titulo: "Gmail", valor: "Psico.sergiodiaz@gmail.com", link: "mailto:Psico.sergiodiaz@gmail.com" },
     { icon: <FaMapMarkerAlt size={20} color="#7BA7A0" />, titulo: "Ubicación", valor: "Medellín, Colombia", link: null },
     { icon: <FaLaptop size={20} color="#7BA7A0" />, titulo: "Modalidad", valor: "Presencial y Virtual", link: null },
     { icon: <FaClock size={20} color="#7BA7A0" />, titulo: "Disponibilidad", valor: "20+ horas semanales", link: null },

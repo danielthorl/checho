@@ -13,7 +13,7 @@ export default function Footer() {
 
   const contactItems = [
     { icon: <FaWhatsapp size={16} color="#25D366" />, valor: "+57 305 337 2724", link: "https://wa.me/573053372724" },
-    { icon: <SiGmail size={16} color="#EA4335" />, valor: "sergiostevendiazpulido01@gmail.com", link: "mailto:sergiostevendiazpulido01@gmail.com" },
+    { icon: <SiGmail size={16} color="#EA4335" />, valor: "Psico.sergiodiaz@gmail.com", link: "mailto:Psico.sergiodiaz@gmail.com" },
     { icon: <FaMapMarkerAlt size={16} color="#7BA7A0" />, valor: "Medellín, Colombia", link: null },
     { icon: <FaLinkedin size={16} color="#0A66C2" />, valor: "LinkedIn", link: "https://linkedin.com/in/sergio-steven-diaz-pulido" },
   ];

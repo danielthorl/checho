@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SobreMi() {
   const sectionStyle = { backgroundColor: "#ffffff", padding: "6rem 1.5rem" };
   const tagStyle = { backgroundColor: "#E8C4B0", color: "#D4866A", padding: "4px 14px", borderRadius: "9999px", fontSize: "0.8rem", fontWeight: 600, display: "inline-block", marginBottom: "1rem" };
@@ -53,8 +55,14 @@ export default function SobreMi() {
 
           {/* Columna derecha */}
           <div style={{ flex: 1, minWidth: "300px" }}>
-            <div style={{ backgroundColor: "#7BA7A0", borderRadius: "24px", height: "280px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
-              <p style={{ color: "white", fontSize: "5rem" }}>👨‍⚕️</p>
+            <div style={{ position: "relative", borderRadius: "24px", height: "420px", overflow: "hidden", marginBottom: "2rem" }}>
+              <Image
+                src="/sergio.jpg"
+                alt="Sergio Steven Díaz Pulido, psicólogo"
+                fill
+                sizes="(max-width: 700px) 100vw, 560px"
+                style={{ objectFit: "cover", objectPosition: "50% 35%" }}
+              />
             </div>
 
             <h3 style={{ color: "#2C2C2C", fontSize: "1.3rem", fontWeight: 700, marginBottom: "1.5rem" }}>Mis valores profesionales</h3>
